@@ -1,0 +1,11 @@
+version: '2'
+services:
+  3proxy:
+    restart: always
+    image: 3proxy
+    ports:
+      - "3128:3128"
+      - "1080:1080"
+    volumes:
+      - "/etc/3proxy:/etc/3proxy"
+
