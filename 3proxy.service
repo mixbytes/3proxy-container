@@ -1,0 +1,13 @@
+[Unit]
+Description=3proxy service
+Wants=docker.service
+After=docker.service
+
+[Service]
+TimeoutSec=30
+Restart=always
+ExecStart=/usr/bin/docker-compose -f /etc/docker-compose.yml -p 3proxy up
+ExecStop=/usr/bin/docker-compose -f /etc/docker-compose.yml -p 3proxy down
+
+[Install]
+WantedBy=multi-user.target
