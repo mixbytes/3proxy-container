@@ -8,7 +8,7 @@ RUN wget https://github.com/z3APA3A/3proxy/archive/$VERSION.tar.gz \
 RUN tar -xf /tmp/src.tar.gz -C ./
 RUN cd "3proxy-$VERSION" \
 && make -f Makefile.Linux \
-&& cp src/3proxy /build/
+&& cp src/* /build/
 
 FROM alpine:latest
 COPY --from=build /build/3proxy /usr/local/bin/
