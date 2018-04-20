@@ -6,6 +6,7 @@ services:
     ports:
       - "3128:3128"
       - "1080:1080"
+      - "443:1080"
     volumes:
       - "/etc/3proxy:/etc/3proxy"
 
